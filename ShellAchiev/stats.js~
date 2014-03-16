@@ -1,19 +1,19 @@
 var arr_stat = new Object();
 
-arr_stat.pwd=0;
-arr_stat.ls=0;
-arr_stat.cd=0;
-arr_stat.cp=0;
-arr_stat.mv=0;
-arr_stat.touch=0;
-arr_stat.mkdir=0;
+arr_stat.pwd=;
+arr_stat.ls=20;
+arr_stat.cd=30;
+arr_stat.cp=;
+arr_stat.mv=;
+arr_stat.touch=;
+arr_stat.mkdir=;
 
 for(var key in arr_stat)
 {
 	document.write( 
 	'<div class="row">' 
     + '<div class="col-md-0 col-md-offset-">'
-    + '<div id="pwd" class="panel panel-success">'
+    + '<div id="pwd" class="panel panel-default">'
     + '<div class="panel-heading">'
     + '<h3 class="panel-title">' + key + '</h3>'
     + '</div>'
