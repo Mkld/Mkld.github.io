@@ -48,11 +48,11 @@ do
               sed -i "" s/var\ \tab_com_def\ \=\ \new\ \Array\(/var\ \tab_com_def\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content.js 
             fi
         fi
-	    if [ ${!var} -ge "1" ]
+	if [ ${!var} -ge "1" ]
+	then
+	    if grep -q \"${com_tableau[$index]}\" <<< $vardef
 	    then
-	        if grep -q \"${com_tableau[$index]}\" <<< $vardef
-	        then
-		      sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content.js
+	      sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content.js
               sed -i "" s/var\ \tab_com_succ\ \=\ \new\ \Array\(/var\ \tab_com_succ\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content.js 
               echo "Good job, you've just unlocked a new achievement : Make your first ${com_tableau[$index]}"
             fi
