@@ -49,30 +49,33 @@ do
               sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content.js
               sed -i "" s/var\ \tab_com_def\ \=\ \new\ \Array\(/var\ \tab_com_def\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content.js 
             fi
+        fi
+        if [ ${!var} -le "9" ]
+        then
             if grep -q \"${com_tableau[$index]}\" <<< $varsucc2
             then
               sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content2.js
               sed -i "" s/var\ \tab_com_def\ \=\ \new\ \Array\(/var\ \tab_com_def\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content2.js 
             fi
         fi
-    fi
-	if [ ${!var} -ge "1" ]
-	then
-	    if grep -q \"${com_tableau[$index]}\" <<< $vardef
-	    then
-	      sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content.js
-              sed -i "" s/var\ \tab_com_succ\ \=\ \new\ \Array\(/var\ \tab_com_succ\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content.js 
-              echo "Good job, you've just unlocked a new achievement : Make your first ${com_tableau[$index]}"
         fi
-    fi
-    if [ ${!var} -ge "10" ]
-    then
-        if grep -q \"${com_tableau[$index]}\" <<< $vardef2
+    	if [ ${!var} -ge "1" ]
+    	then
+    	    if grep -q \"${com_tableau[$index]}\" <<< $vardef
+    	    then
+    	      sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content.js
+                  sed -i "" s/var\ \tab_com_succ\ \=\ \new\ \Array\(/var\ \tab_com_succ\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content.js 
+                  echo "Good job, you've just unlocked a new achievement : Make your first ${com_tableau[$index]}"
+            fi
+        fi
+        if [ ${!var} -ge "10" ]
         then
-          sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content2.js
-              sed -i "" s/var\ \tab_com_succ\ \=\ \new\ \Array\(/var\ \tab_com_succ\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content2.js 
-              echo "Good job, you've just unlocked a new achievement : Make ten ${com_tableau[$index]}"
-        fi
+            if grep -q \"${com_tableau[$index]}\" <<< $vardef2
+            then
+              sed -i "" s/\"${com_tableau[$index]}\",\ \/""/g "$folder_name"/content2.js
+                  sed -i "" s/var\ \tab_com_succ\ \=\ \new\ \Array\(/var\ \tab_com_succ\ \=\ \new\ \Array\(\"${com_tableau[$index]}\",\ \/g "$folder_name"/content2.js 
+                  echo "Good job, you've just unlocked a new achievement : Make ten ${com_tableau[$index]}"
+            fi
     fi
 done
 
