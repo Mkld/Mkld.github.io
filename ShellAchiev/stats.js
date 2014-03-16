@@ -7,6 +7,7 @@ arr_stat.cp=0;
 arr_stat.mv=0;
 arr_stat.touch=0;
 arr_stat.mkdir=0;
+arr_stat.cat=0;
 
 for(var key in arr_stat)
 {
