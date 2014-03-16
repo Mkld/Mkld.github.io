@@ -15,7 +15,7 @@ for (i = 0; i < tab_com_succ.length - 1; i++){
     + '</div>'); 
 }
 
-var tab_com_def = new Array("mv", "mkdir", "touch", "cp", "cd", "ls", "pwd", "");
+var tab_com_def = new Array("mv", "mkdir", "touch", "cp", "cd", "ls", "pwd", "cat", "");
 
 for (i = 0; i < tab_com_def.length - 1; i++){ 
    document.write( '<div class="row">' 
