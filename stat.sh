@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash                                                                     
     ls=`cat historique | grep ls | wc -l`
     cd=`cat historique | grep cd | wc -l`
     pwd=`cat historique | grep pwd | wc -l`
@@ -7,7 +7,7 @@
     touch=`cat historique | grep touch | wc -l`
     mkdir=`cat historique | grep mkdir | wc -l`
     cat=`cat historique | grep cat | wc -l`
-if [ -f $stats ]
+if [ -e stats ]
 then
     prels=`cat stats | grep ls | cut -d "=" -f2`
     precd=`cat stats | grep cd | cut -d "=" -f2`
